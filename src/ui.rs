@@ -1,7 +1,7 @@
 use ratatui::{
     layout::{Alignment, Constraint, Direction, Layout},
     style::Style,
-    widgets::{Block, BorderType, Borders, Paragraph},
+    widgets::{Block, BorderType, Borders, Paragraph, Wrap},
 };
 
 use crate::{app::App, tui::Frame};
@@ -39,7 +39,8 @@ pub fn render(app: &mut App, f: &mut Frame) {
                 .border_type(BorderType::Rounded),
         )
         .style(Style::default())
-        .alignment(Alignment::Right);
+        .alignment(Alignment::Right)
+        .wrap(Wrap { trim: false });
 
     let history_block = Paragraph::new(format!("{:?}", app.history))
         .block(
@@ -50,7 +51,8 @@ pub fn render(app: &mut App, f: &mut Frame) {
                 .border_type(BorderType::Rounded),
         )
         .style(Style::default())
-        .alignment(Alignment::Right);
+        .alignment(Alignment::Right)
+        .wrap(Wrap { trim: false });
 
     f.render_widget(title_block, outer_layout[0]);
     f.render_widget(current_block, inner_layout[0]);
