@@ -1,0 +1,26 @@
+Enter -> run calculation/push to history
+Escape -> exit application
+*Backspace -> delete one character
+CTRL+C -> clear current
+z -> 0
+o -> 1
+t -> 2
+h -> 3
+f -> 4
+i -> 5
+s -> 6
+e -> 7
+g -> 8
+n -> 9
+a -> +
+u -> -
+m -> *
+d -> /
+x -> ^
+*: -> enter command mode
+
+COMMAND MODE
+*w -> save calculation
+*h -> load saved calculation
+*q -> exit
+*ESCAPE -> exit command mode
