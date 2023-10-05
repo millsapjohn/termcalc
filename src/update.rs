@@ -14,6 +14,9 @@ pub fn update(app: &mut App, key_event: KeyEvent) {
                 app.push_history();
                 app.reset_current();
             }
+            KeyCode::Backspace => {
+                app.del_char();
+            }
             KeyCode::Char('z') | KeyCode::Char('Z') => {
                 app.push_current('0');
             }

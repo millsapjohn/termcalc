@@ -27,4 +27,8 @@ impl App {
     pub fn quit(&mut self) {
         self.should_quit = true;
     }
+
+    pub fn del_char(&mut self) {
+        self.current_calc.pop()
+    }
 }
