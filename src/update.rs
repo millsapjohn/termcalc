@@ -11,7 +11,7 @@ pub fn update(app: &mut App, key_event: KeyEvent) {
                 }
             }
             KeyCode::Enter => {
-                app.push_history(app.current_calc);
+                app.push_history();
                 app.reset_current();
             }
             KeyCode::Char('z') | KeyCode::Char('Z') => {

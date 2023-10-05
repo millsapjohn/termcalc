@@ -12,16 +12,16 @@ impl App {
 
     pub fn tick(&self) {}
 
-    pub fn reset_current(&self) {
+    pub fn reset_current(&mut self) {
         self.current_calc = String::new();
     }
 
-    pub fn push_current(&self, s: char) {
+    pub fn push_current(&mut self, s: char) {
         self.current_calc.push(s);
     }
 
-    pub fn push_history(&self, s: String) {
-        self.history.push(s);
+    pub fn push_history(&mut self) {
+        self.history.push(self.current_calc.to_string());
     }
 
     pub fn quit(&mut self) {

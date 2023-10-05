@@ -5,9 +5,8 @@ use crossterm::{
 };
 use std::{io, panic};
 
-pub type Frame<'a> = ratatui::Frame<'a, ratatui::backend::CrosstermBackend<std::io::Stderror>>;
-pub type CrosstermTerminal =
-    ratatui::Terminal<ratatui::backend::CrosstermBackend<std::io::StdError>>;
+pub type Frame<'a> = ratatui::Frame<'a, ratatui::backend::CrosstermBackend<std::io::Stderr>>;
+pub type CrosstermTerminal = ratatui::Terminal<ratatui::backend::CrosstermBackend<std::io::Stderr>>;
 
 use crate::{app::App, event::EventHandler, ui};
 
@@ -43,7 +42,7 @@ impl Tui {
 
     pub fn exit(&mut self) -> Result<()> {
         Self::reset()?;
-        self.terminal_show_cursor()?;
+        self.terminal.show_cursor()?;
         Ok(())
     }
 
